@@ -87,7 +87,6 @@ class Hunting:
         await self.bot.say(message)
 
     @_hunting.command(pass_context=True, no_pm=True, name='next')
-    @checks.is_admin()
     async def _next(self, context):
         """When will the next occurance happen?"""
         if self.next:
