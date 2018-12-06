@@ -19,7 +19,7 @@ class Hunting:
         self.scores = dataIO.load_json('data/hunting/scores.json')
         self.subscriptions = dataIO.load_json('data/hunting/subscriptions.json')
         self.settings = dataIO.load_json('data/hunting/settings.json')
-        self.animals = {'duck': ':duck: **_Quack!_**', 'penguin': ':penguin: **_Noot!_**', 'chicken': ':rooster: **_Bah-gawk!_**', 'pigeon': ':dove: **_Coo!_**'}
+        self.animals = {'fox': ':fox: **_Ring-ding-ding-ding-dingeringeding!_**', 'deer': ':deer: **_Mewww!_**', 'turkey': ':turkey: **_Gobble!_**', 'pigeon': ':dove: **_Coo!_**', 'jake': ':jakewink: **_Brother!_**'}
         self.in_game = []
         self.paused_games = []
         self._latest_message_check_message_limit = 5
@@ -42,6 +42,7 @@ class Hunting:
             await send_cmd_help(context)
 
     @_hunting.command(pass_context=True, no_pm=True, name='start')
+    @checks.is_owner()
     async def _start(self, context):
         """Start the hunt"""
         server = context.message.server
@@ -55,6 +56,7 @@ class Hunting:
         await self.bot.say(message)
 
     @_hunting.command(pass_context=True, no_pm=True, name='stop')
+    @checks.is_owner()
     async def _stop(self, context):
         """Stop the hunt"""
         server = context.message.server
@@ -85,7 +87,7 @@ class Hunting:
         await self.bot.say(message)
 
     @_hunting.command(pass_context=True, no_pm=True, name='next')
-    @checks.is_owner()
+    @checks.is_admin()
     async def _next(self, context):
         """When will the next occurance happen?"""
         if self.next:
@@ -160,7 +162,7 @@ class Hunting:
 
     async def _wait_for_bang(self, server, channel):
         def check(message):
-            return message.content.lower().split(' ')[0] == 'bang' or message.content.lower() == 'b' if message.content else False
+            return message.content.lower().split(' ')[0] == 'bang', ':b:' or message.content.lower() == 'b' if message.content else False
 
         animal = random.choice(list(self.animals.keys()))
         await self.bot.send_message(channel, self.animals[animal])
