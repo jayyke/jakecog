@@ -1,4 +1,10 @@
-def embedsayadmin(self, ctx, *, text: str):
+import discord
+from discord.ext import commands
+
+class embed:
+    """Maybe this will work!"""
+
+        def embedsayadmin(self, ctx, *, text: str):
         """Says Something as the bot without any trace of the message author in a embed"""
 
         if ctx.message.server.me.bot:
