@@ -19,7 +19,7 @@ class Hunting:
         self.scores = dataIO.load_json('data/hunting/scores.json')
         self.subscriptions = dataIO.load_json('data/hunting/subscriptions.json')
         self.settings = dataIO.load_json('data/hunting/settings.json')
-        self.animals = {'fox': ':fox: **_Ring-ding-ding-ding-dingeringeding!_**', 'deer': ':deer: **_Mewww!_**', 'turkey': ':turkey: **_Gobble!_**', 'pigeon': ':dove: **_Coo!_**', 'jake': ':jakewink: **_Brother!_**'}
+        self.animals = {'fox': ':fox: **_Ring-ding-ding-ding-dingeringeding!_**', 'deer': ':deer: **_Mewww!_**', 'turkey': ':turkey: **_Gobble!_**', 'jake': ':jakewink: **_Brother!_**'}
         self.in_game = []
         self.paused_games = []
         self._latest_message_check_message_limit = 5
