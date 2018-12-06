@@ -1,0 +1,9 @@
+{
+    "AUTHOR" : "Jake",
+    "SHORT" : "Makes embeds",
+    "DESCRIPTION" : "Makes an embed DUH",
+    "DISABLED" : false,
+    "NAME" : "embed",
+    "TAGS" : ["utility", "mass mentions", "everyone"],
+    "INSTALL_MSG" : "This cog is commandless. There is nothing to set up. As long as it is loaded it will silence any outcoming mass mention."
+}
