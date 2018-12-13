@@ -1,0 +1,10 @@
+{
+    "AUTHOR" : "Jake",
+    "INSTALL_MSG" : "You have successfully installed Squeeze. Now squeeze your senpai/waifu!",
+    "NAME" : "squeeze",
+    "SHORT" : "[p]squeeze @user",
+    "DESCRIPTION" : "Squeeze your senpai/waifu!",
+    "TAGS" : ["squeeze"],
+    "REQUIREMENTS" : [],
+    "HIDDEN" : false
+}
