@@ -112,19 +112,6 @@ class Hunting:
             message = '**Please shoot something before you can brag about it.**'
         await self.bot.say(message)
 
-    @_hunting.command(pass_context=True, no_pm=True, name='clearscore')
-    @checks.serverowner()
-    async def _clearscore(self, context):
-        """Clear the leaderboard"""
-        server = context.message.server
-        if server.id in self.scores:
-            self.scores[server.id] = {}
-            await self._save_scores()
-            message = 'Leaderboard is cleared'
-        else:
-            message = 'There\'s nothing to clear'
-        await self.bot.say(message)
-
     @_hunting.command(pass_context=True, no_pm=True, name='leaderboard', aliases=['scores'])
     async def _huntingboard(self, context):
         """This will show the top hunters on this server"""
